@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <style>
+        .btn{
+            margin:50px;
+            width:40px;
+            height:20px;
+            line-height:20px;
+            text-align:center;
+            background:gray;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">按钮</div>
+    <script>
+        $(function(){
+            var thirdParty={
+                init:function(){
+                    this.qqFn();
+                },
+                qqFn:function(){
+                    $(".btn").on("click",function(){
+                        window.open("https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101432968&redirect_uri=http://www.yrcmall.com/login2.html&state=CSRF")
+                    })
+                }
+            }
+
+            thirdParty.init();
+        })
+    </script>
+</body>
+</html>
